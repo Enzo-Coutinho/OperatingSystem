@@ -1,3 +1,1 @@
-jmp [0x1234]
-
-add eax, ecx
+jmp [eax * 4 + 0x1234]
