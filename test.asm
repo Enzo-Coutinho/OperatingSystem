@@ -1,1 +1,1 @@
-jmp eax
+jmp [0x1234]
