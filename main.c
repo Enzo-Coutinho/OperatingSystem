@@ -7,10 +7,7 @@ struct bit_field {
 
 struct bit_field2 {
     int data1 : 8;
-    int data2 : 8;
-    int data3 : 8;
-    int data4 : 8;
-    char data5 : 4;
+    int data2 : 32;
 };
 
 struct normal_struct {
@@ -35,10 +32,7 @@ struct bit_field bf = {
 
 struct bit_field2 bf2 = {
     .data1 = 0x12,
-    .data2 = 0x34,
-    .data3 = 0x56,
-    .data4 = 0x78,
-    .data5 = 0xf
+    .data2 = 0x3456,
 };
 
 int main()

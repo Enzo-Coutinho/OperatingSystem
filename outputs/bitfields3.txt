@@ -1,0 +1,66 @@
+
+main:     file format elf64-x86-64
+
+
+Disassembly of section .data:
+
+0000000000004000 <__data_start>:
+    4000:	00 00                	add    BYTE PTR [rax],al
+    4002:	00 00                	add    BYTE PTR [rax],al
+    4004:	00 00                	add    BYTE PTR [rax],al
+    4006:	00 00                	add    BYTE PTR [rax],al
+
+0000000000004008 <__dso_handle>:
+    4008:	08 40 00             	or     BYTE PTR [rax+0x0],al
+    400b:	00 00                	add    BYTE PTR [rax],al
+    400d:	00 00                	add    BYTE PTR [rax],al
+    400f:	00               	add    BYTE PTR [rax+0x56],bh
+
+0000000000004010 <ns>:
+    int data2;
+    int data3;
+    int data4;
+};
+
+struct normal_struct ns = {
+    4010:	78 56                	js     4068 <_end+0x30>
+    4012:	34 12                	xor    al,0x12
+    4014:	f0 de bc 9a 78 56 34 	lock fidivr WORD PTR [rdx+rbx*4+0x12345678]
+    401b:	12 
+    401c:	f0 de bc 9a    	lock fidivr WORD PTR [rdx+rbx*4+0x12345678]
+    4023:	 
+
+0000000000004020 <i>:
+    .data2 = 0x9abcdef0,
+    .data3 = 0x12345678,
+    .data4 = 0x9abcdef0
+};
+
+int i = 0x12345678;
+    4020:	78 56                	js     4078 <_end+0x40>
+    4022:	34 12                	xor    al,0x12
+
+0000000000004024 <bf>:
+
+struct bit_field bf = {
+    4024:	12 00                	adc    al,BYTE PTR [rax]
+    4026:	00 00                	add    BYTE PTR [rax],al
+
+0000000000004028 <bf2>:
+    .data1 = 0x12
+};
+
+struct bit_field2 bf2 = {
+    4028:	12 00                	adc    al,BYTE PTR [rax]
+    402a:	00 00                	add    BYTE PTR [rax],al
+    402c:	56                   	push   rsi
+    402d:	34 00                	xor    al,0x0
+    402f:	00                   	.byte 0
+
+Disassembly of section .bss:
+
+0000000000004030 <completed.0>:
+    4030:	00 00                	add    BYTE PTR [rax],al
+    4032:	00 00                	add    BYTE PTR [rax],al
+    4034:	00 00                	add    BYTE PTR [rax],al
+    4036:	00 00                	add    BYTE PTR [rax],al
