@@ -1,0 +1,47 @@
+
+main:     file format elf64-x86-64
+
+
+Disassembly of section .data:
+
+0000000000004000 <__data_start>:
+    4000:	00 00                	add    BYTE PTR [rax],al
+    4002:	00 00                	add    BYTE PTR [rax],al
+    4004:	00 00                	add    BYTE PTR [rax],al
+    4006:	00 00                	add    BYTE PTR [rax],al
+
+0000000000004008 <__dso_handle>:
+    4008:	08 40 00             	or     BYTE PTR [rax+0x0],al
+    400b:	00 00                	add    BYTE PTR [rax],al
+    400d:	00 00                	add    BYTE PTR [rax],al
+    400f:	00               	add    BYTE PTR [rdx+rdx*1],dh
+
+0000000000004010 <p1>:
+#include <stdio.h>
+#include <inttypes.h>
+
+int8_t i = 0;
+int8_t * p1 = (int8_t *) 0x1234;
+    4010:	34 12                	xor    al,0x12
+    4012:	00 00                	add    BYTE PTR [rax],al
+    4014:	00 00                	add    BYTE PTR [rax],al
+    4016:	00 00                	add    BYTE PTR [rax],al
+
+0000000000004018 <p2>:
+int8_t * p2 = &i;
+    4018:	21 40 00             	and    DWORD PTR [rax+0x0],eax
+    401b:	00 00                	add    BYTE PTR [rax],al
+    401d:	00 00                	add    BYTE PTR [rax],al
+    401f:	00                   	.byte 0
+
+Disassembly of section .bss:
+
+0000000000004020 <completed.0>:
+    4020:	00                 	add    BYTE PTR [rax],al
+
+0000000000004021 <i>:
+int8_t i = 0;
+    4021:	00 00                	add    BYTE PTR [rax],al
+    4023:	00 00                	add    BYTE PTR [rax],al
+    4025:	00 00                	add    BYTE PTR [rax],al
+    4027:	00                   	.byte 0

@@ -1,13 +1,51 @@
 #include <stdio.h>
 #include <inttypes.h>
 
+struct bit_field {
+    int data1 : 8;
+    int data2 : 8;
+    int data3 : 8;
+    int data4 : 8;
+};
 
-uint8_t byte = 0x12;
-uint16_t word = 0x1234;
-uint32_t dword = 0x12345678;
-uint64_t qworx = 0x123456789abcdef;
-__uint128_t dqword1 = (__uint128_t)0x123456789abcdef;
-__uint128_t dqword2 = (__uint128_t)0x123456789abcdef << 64;
+struct bit_field2 {
+    int data1 : 8;
+    int data2 : 8;
+    int data3 : 8;
+    int data4 : 8;
+    char data5 : 4;
+};
+
+struct normal_struct {
+    int data1;
+    int data2;
+    int data3;
+    int data4;
+};
+
+struct normal_struct ns = {
+    .data1 = 0x12345678,
+    .data2 = 0x9abcdef0,
+    .data3 = 0x12345678,
+    .data4 = 0x9abcdef0
+};
+
+int i = 0x12345678;
+
+struct bit_field bf = {
+    .data1 = 0x12,
+    .data2 = 0x34,
+    .data3 = 0x56,
+    .data4 = 0x78,
+};
+
+struct bit_field2 bf2 = {
+    .data1 = 0x12,
+    .data2 = 0x34,
+    .data3 = 0x56,
+    .data4 = 0x78,
+    .data5 = 0xf
+};
 
 int main()
 {

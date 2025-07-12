@@ -1,0 +1,71 @@
+
+main:     file format elf64-x86-64
+
+
+Disassembly of section .data:
+
+0000000000004000 <__data_start>:
+    4000:	00 00                	add    BYTE PTR [rax],al
+    4002:	00 00                	add    BYTE PTR [rax],al
+    4004:	00 00                	add    BYTE PTR [rax],al
+    4006:	00 00                	add    BYTE PTR [rax],al
+
+0000000000004008 <__dso_handle>:
+    4008:	08 40 00             	or     BYTE PTR [rax+0x0],al
+    400b:	00 00                	add    BYTE PTR [rax],al
+    400d:	00 00                	add    BYTE PTR [rax],al
+    400f:	00                 	add    BYTE PTR [rdx],dl
+
+0000000000004010 <byte>:
+#include <stdio.h>
+#include <inttypes.h>
+
+int8_t i = 0;
+int8_t * p1 = (int8_t) 0x1234;
+    4010:	12 00                	adc    al,BYTE PTR [rax]
+
+0000000000004012 <word>:
+int8_t * p2 = &i;
+    4012:	34 12                	xor    al,0x12
+
+0000000000004014 <dword>:
+
+    4014:	78 56                	js     406c <_end+0x24>
+    4016:	34 12                	xor    al,0x12
+
+0000000000004018 <qworx>:
+int main()
+    4018:	ef                   	out    dx,eax
+    4019:	cd ab                	int    0xab
+    401b:	89 67 45             	mov    DWORD PTR [rdi+0x45],esp
+    401e:	23 01                	and    eax,DWORD PTR [rcx]
+
+0000000000004020 <dqword1>:
+{
+    4020:	ef                   	out    dx,eax
+    4021:	cd ab                	int    0xab
+    4023:	89 67 45             	mov    DWORD PTR [rdi+0x45],esp
+    4026:	23 01                	and    eax,DWORD PTR [rcx]
+    4028:	00 00                	add    BYTE PTR [rax],al
+    402a:	00 00                	add    BYTE PTR [rax],al
+    402c:	00 00                	add    BYTE PTR [rax],al
+    402e:	00 00                	add    BYTE PTR [rax],al
+
+0000000000004030 <dqword2>:
+    return 0;
+    4030:	00 00                	add    BYTE PTR [rax],al
+    4032:	00 00                	add    BYTE PTR [rax],al
+    4034:	00 00                	add    BYTE PTR [rax],al
+    4036:	00 00                	add    BYTE PTR [rax],al
+    4038:	ef                   	out    dx,eax
+    4039:	cd ab                	int    0xab
+    403b:	89 67 45             	mov    DWORD PTR [rdi+0x45],esp
+    403e:	23 01                	and    eax,DWORD PTR [rcx]
+
+Disassembly of section .bss:
+
+0000000000004040 <completed.0>:
+    4040:	00 00                	add    BYTE PTR [rax],al
+    4042:	00 00                	add    BYTE PTR [rax],al
+    4044:	00 00                	add    BYTE PTR [rax],al
+    4046:	00 00                	add    BYTE PTR [rax],al
